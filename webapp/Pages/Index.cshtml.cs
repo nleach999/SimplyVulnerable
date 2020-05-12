@@ -20,7 +20,8 @@ namespace webapp.Pages
         public void OnPost()
         {
             SqlConnection con = new SqlConnection();
-            SqlCommand cmd = new SqlCommand($"SELECT * FROM SomeTable WHERE SomeColumn = '{RandomWord}'", con);
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM SomeTable WHERE SomeColumn = '" + RandomWord + "'", con);
             
             ViewData["response"] = $"{YourName}, here is the result: {cmd.ExecuteScalar ()}";
         }
