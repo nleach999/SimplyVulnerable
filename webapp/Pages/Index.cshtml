@@ -1,0 +1,21 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<h3>@Html.Raw(ViewData["response"])</h3>
+
+<form method="post">
+    <div>
+        Your Name: <input type="text" name="YourName" />
+    </div>
+    <div>
+        A random work: <input type="text" name="RandomWord" />
+    </div>
+    <div>
+        <input type="submit" />
+    </div>
+</form>
+
+
