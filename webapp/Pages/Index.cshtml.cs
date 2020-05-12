@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
 using System.IO;
+using System.Text;
 
 namespace webapp.Pages
 {
@@ -20,13 +21,7 @@ namespace webapp.Pages
             
             String response = Request.Form["YourName"] + ", here is the result: " + cmd.ExecuteScalar();
 
-            MemoryStream body = new MemoryStream();
-
-            StreamWriter sw = new StreamWriter(body);
-            sw.Write(response);
-            sw.Flush();
-
-            Response.Body.Write(new ReadOnlySpan<byte>(body.ToArray () ) );
+            Response.Body.Write(new ReadOnlySpan<byte>(Encoding.UTF8.GetBytes (response.ToArray ()) ) );
         }
     }
 }
