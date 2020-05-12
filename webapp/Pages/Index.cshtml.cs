@@ -21,9 +21,9 @@ namespace webapp.Pages
         {
             SqlConnection con = new SqlConnection();
 
-            SqlCommand cmd = new SqlCommand("SELECT * FROM SomeTable WHERE SomeColumn = '" + RandomWord + "'", con);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM SomeTable WHERE SomeColumn = '" + Request.Form["RandomWord"] + "'", con);
             
-            ViewData["response"] = $"{YourName}, here is the result: {cmd.ExecuteScalar ()}";
+            ViewData["response"] = Request.Form["YourName"] + ", here is the result: " + cmd.ExecuteScalar ();
         }
     }
 }
