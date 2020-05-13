@@ -2,4 +2,3 @@
 
 A very small vulnerable .Net Core Razor web application.
 
-# Simulate a Change
