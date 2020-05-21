@@ -15,6 +15,8 @@ namespace webapp.Pages
 
         public void OnPost()
         {
+            String password = "This line will be detected as a vulnerability.";
+            
             SqlConnection con = new SqlConnection();
 
             SqlCommand cmd = new SqlCommand("SELECT * FROM SomeTable WHERE SomeColumn = '" + Request.Form["RandomWord"] + "'", con);
