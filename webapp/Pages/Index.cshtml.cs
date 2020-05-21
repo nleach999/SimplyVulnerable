@@ -7,6 +7,8 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
 using System.IO;
 using System.Text;
+using System.Web;
+
 
 namespace webapp.Pages
 {
@@ -21,7 +23,7 @@ namespace webapp.Pages
             var param = cmd.Parameters.Add("@RandomWord", System.Data.SqlDbType.VarChar);
             param.Value = Request.Form["RandomWord"];
 
-            String response = Request.Form["YourName"] + ", here is the result: " + cmd.ExecuteScalar();
+            String response = HttpUtility.HtmlEncode (Request.Form["YourName"]) + ", here is the result: " + HttpUtility.HtmlEncode(cmd.ExecuteScalar());
 
             Response.Body.Write(new ReadOnlySpan<byte>(Encoding.UTF8.GetBytes (response.ToArray ()) ) );
         }
