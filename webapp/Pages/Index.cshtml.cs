@@ -15,7 +15,7 @@ namespace webapp.Pages
 
         public void OnPost()
         {
-            String password = "This line will cause a false-positive";
+            String password = "This line will be detected as a vulnerability.";
             
             SqlConnection con = new SqlConnection();
 
