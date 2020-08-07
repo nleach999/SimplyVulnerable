@@ -19,9 +19,11 @@ namespace webapp.Pages
             
             SqlConnection con = new SqlConnection();
 
-            SqlCommand cmd = new SqlCommand("SELECT * FROM SomeTable WHERE SomeColumn = '" + Request.Form["RandomWord"] + "'", con);
-            
-            String response = Request.Form["YourName"] + ", here is the result: " + cmd.ExecuteScalar();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM SomeTable WHERE SomeColumn = @RandomWord", con);
+            var param = cmd.Parameters.Add("@RandomWord", System.Data.SqlDbType.VarChar);
+            param.Value = Request.Form["RandomWord"];
+
+            String response = HttpUtility.HtmlEncode (Request.Form["YourName"]) + ", here is the result: " + HttpUtility.HtmlEncode(cmd.ExecuteScalar());
 
             Response.Body.Write(new ReadOnlySpan<byte>(Encoding.UTF8.GetBytes (response.ToArray ()) ) );
         }
