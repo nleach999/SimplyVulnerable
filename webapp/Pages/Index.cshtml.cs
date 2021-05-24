@@ -24,7 +24,7 @@ namespace webapp.Pages
             SqlCommand interpolatedCmd = new SqlCommand($"SELECT * FROM SomeTable WHERE SomeColumn = '{Request.Form["RandomWord"]}'", con);
             
             String response = Request.Form["YourName"] + ", here is the result: " + cmd.ExecuteScalar()
-              + "and " + interpolatedCmd.executeScalar ();
+              + "and " + interpolatedCmd.ExecuteScalar ();
 
             Response.Body.Write(new ReadOnlySpan<byte>(Encoding.UTF8.GetBytes (response.ToArray ()) ) );
         }
