@@ -1,0 +1,17 @@
+{
+	"version": 1.0,
+	"team": "/CxServer/csharp",
+	"sast": {
+		"preset": "All",
+		"engineConfiguration": "Default Configuration",
+		"incremental": "false",
+		"forceScan": "true"
+	},
+	"additionalProperties": {
+		"cxFlow": {
+			"application": "Simply Vulnerable Test",
+			"jira": {
+				"project": "SV"
+			}
+		}
+	}
