@@ -12,11 +12,12 @@
 			"application": "Simply Vulnerable Test",
 			"jira": {
 				"project": "SV"
-			},
-		"sca" : {
-		          "team": "/CxServer/Champions/NA-Partners"
-		        }
+			}
 		}
+	},
+	"sca" : {
+	  "team": "/CxServer/Champions/NA-Partners"
 	}
+
 }
 
