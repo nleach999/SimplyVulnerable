@@ -9,7 +9,10 @@
 	},
 	"additionalProperties": {
 		"cxFlow": {
-			"application": "Simply Vulnerable Test"
+			"application": "Simply Vulnerable Test",
+			"jira": {
+				"project": "SV"
+			}
 		}
 	},
 	"sca" : {
