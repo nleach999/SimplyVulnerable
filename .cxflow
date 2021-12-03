@@ -1,6 +1,6 @@
 {
 	"version": 1.0,
-	"project" : "SimplyVulnerable-[${branch}]",
+	"project" : "SimplyVulnerable-${branch}",
 	"team": "/CxServer/csharp",
 	"sast": {
 		"preset": "All",
