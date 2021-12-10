@@ -1,7 +1,7 @@
 {
 	"version": 1.0,
 	"project" : "SimplyVulnerable-[${branch}]",
-	"team": "/CxServer/demo1",
+	"team": "/CxServer/demo2",
 	"sast": {
 		"preset": "All",
 		"engineConfiguration": "Default Configuration",
