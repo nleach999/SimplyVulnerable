@@ -2,4 +2,4 @@
 
 A very small vulnerable .Net Core Razor web application.
  
-TEST-M1
+TEST-M1-2
