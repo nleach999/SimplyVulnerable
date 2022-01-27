@@ -3,7 +3,7 @@
 	"project" : "SimplyVulnerable-[${branch}]",
 	"team": "/CxServer/csharp",
 	"sast": {
-		"preset": "All",
+		"preset": "Checkmarx Default",
 		"engineConfiguration": "Default Configuration",
 		"incremental": "false",
 		"forceScan": "true"
