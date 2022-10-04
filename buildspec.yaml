@@ -22,7 +22,7 @@ phases:
       # CxFlow execution with no issue tracker.  If using an issue tracker,
       # more options are needed.
       - |
-        java -Dspring.profiles.active=9.0 \
+        java -Dspring.profiles.active=sast \
         -jar cx-flow-1.6.35-java11.jar \
         --app "SimplyVulnerable" \
         --bug-tracker="NONE" \
