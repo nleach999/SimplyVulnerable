@@ -1,0 +1,19 @@
+version: 0.2
+
+env:
+  shell: bash
+phases:
+  install:
+    runtime-versions:
+      java: corretto11
+
+  pre_build:
+    commands:
+      - wget https://github.com/checkmarx-ltd/cx-flow/releases/download/1.6.35/cx-flow-1.6.35-java11.jar
+      - ls -lR
+  build:
+    commands:
+      - java --version
+      - java -jar cx-flow-1.6.35-java11.jar
+      
+    
