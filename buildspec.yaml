@@ -4,6 +4,8 @@ env:
   shell: bash
   parameter-store:
     CHECKMARX_BASE_URL: "/nleach/checkmarx_base_url"
+    CHECKMARX_USERNAME: "/nleach/checkmarx_username"
+    CHECKMARX_PASSWORD: "/nleach/checkmarx_password"
 phases:
   install:
     runtime-versions:
@@ -17,10 +19,19 @@ phases:
     commands:
       - env
       - java --version
+      # CxFlow execution with no issue tracker.  If using an issue tracker,
+      # more options are needed.
       - |
         java -Dspring.profiles.active=9.0 \
         -jar cx-flow-1.6.35-java11.jar \
-        --wrong
+        --app "SimplyVulnerable" \
+        --bug-tracker="NONE" \
+        --cx-team="/CxServer" \
+        --cx-project="Codebuild-SimplyVulnerable" \
+        --scan \
+        --f="."
+        
+        
       
       
     
