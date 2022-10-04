@@ -3,7 +3,7 @@ version: 0.2
 env:
   shell: bash
   parameter-store:
-  CHECKMARX_BASE_URL: "/nleach/checkmarx_base_url"
+    CHECKMARX_BASE_URL: "/nleach/checkmarx_base_url"
 phases:
   install:
     runtime-versions:
