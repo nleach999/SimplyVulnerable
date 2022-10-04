@@ -21,7 +21,7 @@ phases:
       - |
         java -Dspring.profiles.active=sast \
         -jar cx-flow-1.6.35-java11.jar \
-        --app "SimplyVulnerable" \
+        --app="SimplyVulnerable" \
         --bug-tracker="NONE" \
         --cx-team="/CxServer" \
         --cx-project="Codebuild-SimplyVulnerable" \
