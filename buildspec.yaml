@@ -2,6 +2,8 @@ version: 0.2
 
 env:
   shell: bash
+  parameter-store:
+  CHECKMARX_BASE_URL: "/nleach/checkmarx_base_url"
 phases:
   install:
     runtime-versions:
@@ -15,7 +17,9 @@ phases:
     commands:
       - env
       - java --version
-      - java -jar cx-flow-1.6.35.jar --wrong
+      - java -Dspring.profiles.active=9.0 \
+        -jar cx-flow-1.6.35.jar \
+        --wrong
       
       
     
