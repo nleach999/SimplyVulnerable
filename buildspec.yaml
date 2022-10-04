@@ -14,6 +14,7 @@ phases:
   build:
     commands:
       - java --version
-      - java -jar cx-flow-1.6.35-java11.jar
+      - java -jar cx-flow-1.6.35-java11.jar --wrong
+      
       
     
