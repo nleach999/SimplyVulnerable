@@ -11,14 +11,15 @@ phases:
 
   pre_build:
     commands:
-      - wget -q https://github.com/checkmarx-ltd/cx-flow/releases/download/1.6.35/cx-flow-1.6.35.jar
+      - wget -q https://github.com/checkmarx-ltd/cx-flow/releases/download/1.6.35/cx-flow-1.6.35-java11.jar
       - ls -lR
   build:
     commands:
       - env
       - java --version
-      - java -Dspring.profiles.active=9.0 \
-        -jar cx-flow-1.6.35.jar \
+      - |
+        java -Dspring.profiles.active=9.0 \
+        -jar cx-flow-1.6.35-java11.jar \
         --wrong
       
       
