@@ -1,5 +1,7 @@
 version: 0.2
 
+# Using managed image: aws/codebuild/amazonlinux2-x86_64-standard:3.0
+
 env:
   shell: bash
   parameter-store:
