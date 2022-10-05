@@ -6,6 +6,12 @@ env:
     CHECKMARX_BASE_URL: "/nleach/checkmarx_base_url"
     CHECKMARX_USERNAME: "/nleach/checkmarx_username"
     CHECKMARX_PASSWORD: "/nleach/checkmarx_password"
+    SCA_APP_URL: "/nleach/sca_app_url"
+    SCA_API_URL: "/nleach/sca_api_url"
+    SCA_ACCESS_CONTROL_URL: "/nleach/sca_access_control_url"
+    SCA_TENANT: "/nleach/sca_tenant"
+    SCA_USERNAME: "/nleach/sca_username"
+    SCA_PASSWORD: "/nleach/sca_password"
 phases:
   install:
     runtime-versions:
@@ -14,6 +20,7 @@ phases:
   pre_build:
     commands:
       - wget -q https://github.com/checkmarx-ltd/cx-flow/releases/download/1.6.35/cx-flow-1.6.35-java11.jar
+      - export CX_FLOW_ENABLED_VULNERABILITY_SCANNERS="sast,sca"
   build:
     commands:
       # CxFlow execution with no issue tracker.  If using an issue tracker,
@@ -25,8 +32,10 @@ phases:
         --bug-tracker="NONE" \
         --cx-team="/CxServer" \
         --cx-project="Codebuild-SimplyVulnerable" \
+        --checkmarx.scan-preset="High and Medium" \
         --scan \
         --f="."
+        
         
         
       
