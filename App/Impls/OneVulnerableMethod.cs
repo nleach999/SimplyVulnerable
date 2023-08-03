@@ -14,5 +14,20 @@ namespace App.Impls
             return cmd.ExecuteScalar() as String;
 
         }
+
+// FIXED VERSION
+/*
+        public String WriteToDB(string something)
+        {
+            using (SqlConnection con = new SqlConnection())
+            using(SqlCommand cmd = new SqlCommand($"SELECT * FROM SomeTable WHERE SomeColumn = @Y", con))
+            {
+                cmd.Parameters.Add("@Y", SqlDbType.String);
+                cmd.Parameters["@Y"] = something;
+            }
+
+            return cmd.ExecuteScalar() as String;
+        }
+*/
     }
 }
