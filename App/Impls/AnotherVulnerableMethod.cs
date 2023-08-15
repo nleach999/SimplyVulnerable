@@ -7,17 +7,6 @@ namespace App.Impls
     {
         public String WriteToDB(string something)
         {
-            SqlConnection con = new SqlConnection();
-
-            SqlCommand cmd = new SqlCommand($"SELECT * FROM SomeTable WHERE SomeColumn = '{something}'", con);
-
-            return cmd.ExecuteScalar() as String;
-        }
-
-        // FIXED VERSION
-/*        
-        public String WriteToDB(string something)
-        {
             using (SqlConnection con = new SqlConnection())
             using(SqlCommand cmd = new SqlCommand($"SELECT * FROM SomeTable WHERE SomeColumn = @X", con))
             {
@@ -27,7 +16,6 @@ namespace App.Impls
 
             return cmd.ExecuteScalar() as String;
         }
-*/        
         
     }
 }
