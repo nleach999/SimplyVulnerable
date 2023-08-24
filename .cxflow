@@ -21,6 +21,6 @@
 	  "team": "/CxServer/SCA-PM/Champions/NA-Partners"
 	},
 	 "customFields": {
-	    "InventoryId": "ABC123"
+	    "InventoryId": "A NEW VALUE"
 	  }
 }
