@@ -11,7 +11,7 @@
 	"additionalProperties": {
 		"cxFlow": {
 			"application": "Simply Vulnerable Test",
-			"branches": ["demo-master"],
+			"branches": ["demo-master", "release/1.0"],
 			"jira": {
 				"project": "SV"
 			}
